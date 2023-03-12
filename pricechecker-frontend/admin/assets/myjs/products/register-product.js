@@ -20,10 +20,13 @@ function registerProduct(title, description, productUrl, imageUrl, price, catego
                     window.location.href = baseAdminPathName + '/authorized/products/products.html';
                 }else {
                     window.console.log("add product error: " + resp['error']);
+                    let error = resp['error']
+                    window.alert(error);
                 }
             },
             fail: function (response) {
                 window.console.log("add product error: " + response);
+                window.alert(response)
             }
         }
     );

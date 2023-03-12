@@ -14,20 +14,23 @@
     <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="assets/vendor/font-awesome/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/font-electro.css">
-
-    <link rel="stylesheet" href="assets/vendor/animate.css/animate.min.css">
     <link rel="stylesheet" href="assets/vendor/hs-megamenu/src/hs.megamenu.css">
     <link rel="stylesheet" href="assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" href="assets/vendor/fancybox/jquery.fancybox.css">
     <link rel="stylesheet" href="assets/vendor/slick-carousel/slick/slick.css">
     <link rel="stylesheet" href="assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css">
+    <!-- Preloader CSS
+       ============================================ -->
+    <link rel="stylesheet" href="assets/css/preloader-style.css">
     <!-- CSS Electro Template -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/theme.css">
     <!--    customized style-->
     <link rel="stylesheet" href="assets/css/custom.css">
 
-    
+
+    <link rel="stylesheet" href="assets/vendor/animate.css/animate.min.css">
+
 </head>
 
 <body>
@@ -39,159 +42,170 @@
 <!-- ========== END HEADER ========== -->
 
 <!-- ========== MAIN CONTENT ========== -->
+
 <main id="content" role="main">
+
     <!-- Slider Section -->
     <div class="mb-4">
-        <div class="bg-img-hero" >
-            <div class="container min-height-438 overflow-hidden">
-        <!--
-        <div class="bg-img-hero" style="background-image: url(images/img2.jpg);">
-            <div class="container min-height-438 overflow-hidden">
-                <div id="index-carousel" class="js-slick-carousel u-slick"
-                     data-pagi-classes="text-center position-absolute right-0 bottom-0 left-0 u-slick__pagination u-slick__pagination--long justify-content-start mb-3 mb-md-4 offset-xl-2 pl-xl-16 pl-wd-13">
-                    <div class="js-slide">
-                        <div class="row min-height-438 pt-7 py-md-0">
-                            <div class="d-none d-xl-block col-auto">
-                                <div class="max-width-270 min-width-270"></div>
-                            </div>
-                            <div class="col-xl col col-md-6 mt-md-8 mt-lg-10">
-                                <div class="ml-xl-4">
-                                    <h4 class="font-size-35 font-weight-bold mb-2 text-cyan"
-                                        data-scs-animation-in="fadeInUp">
-                                        CHECK PRICE AND CHOOSE THE PRODUCT FROM HERE
-                                    </h4>
-                                    <h1 class="font-size-46 text-lh-50 font-weight-light mb-6"
-                                        data-scs-animation-in="fadeInUp"
-                                        data-scs-animation-delay="200">
-                                        YOU CAN SAVE MANY TIME TO SEARCH PRICE <stong class="font-weight-bold">40% OFF</stong>
-                                    </h1>
-                                    <a href="" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"></a>
-                                    <a href="" class="btn btn-primary transition-3d-hover rounded-lg  py-2 px-md-7 px-3 font-size-16"
-                                       data-scs-animation-in="fadeInUp"
-                                       data-scs-animation-delay="300">
-                                        LET'S USE PRICE CHECKER
-                                    </a>
+        <div class="bg-img-hero">
+            <s class="container min-height-438 overflow-hidden">
+                <!--
+                <div class="bg-img-hero" style="background-image: url(images/img2.jpg);">
+                    <div class="container min-height-438 overflow-hidden">
+                        <div id="index-carousel" class="js-slick-carousel u-slick"
+                             data-pagi-classes="text-center position-absolute right-0 bottom-0 left-0 u-slick__pagination u-slick__pagination--long justify-content-start mb-3 mb-md-4 offset-xl-2 pl-xl-16 pl-wd-13">
+                            <div class="js-slide">
+                                <div class="row min-height-438 pt-7 py-md-0">
+                                    <div class="d-none d-xl-block col-auto">
+                                        <div class="max-width-270 min-width-270"></div>
+                                    </div>
+                                    <div class="col-xl col col-md-6 mt-md-8 mt-lg-10">
+                                        <div class="ml-xl-4">
+                                            <h4 class="font-size-35 font-weight-bold mb-2 text-cyan"
+                                                data-scs-animation-in="fadeInUp">
+                                                CHECK PRICE AND CHOOSE THE PRODUCT FROM HERE
+                                            </h4>
+                                            <h1 class="font-size-46 text-lh-50 font-weight-light mb-6"
+                                                data-scs-animation-in="fadeInUp"
+                                                data-scs-animation-delay="200">
+                                                YOU CAN SAVE MANY TIME TO SEARCH PRICE <stong class="font-weight-bold">40% OFF</stong>
+                                            </h1>
+                                            <a href="" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"></a>
+                                            <a href="" class="btn btn-primary transition-3d-hover rounded-lg  py-2 px-md-7 px-3 font-size-16"
+                                               data-scs-animation-in="fadeInUp"
+                                               data-scs-animation-delay="300">
+                                                LET'S USE PRICE CHECKER
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-5 col-6 d-flex align-items-end ml-auto ml-md-0"
+                                         data-scs-animation-in="fadeInUp"
+                                         data-scs-animation-delay="500">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-xl-5 col-6 d-flex align-items-end ml-auto ml-md-0"
-                                 data-scs-animation-in="fadeInUp"
-                                 data-scs-animation-delay="500">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="js-slide">
-                        <div class="row min-height-438 pt-7 py-md-0">
-                            <div class="d-none d-xl-block col-auto">
-                                <div class="max-width-270 min-width-270"></div>
-                            </div>
-                            <div class="col-xl col col-md-6 mt-md-8 mt-lg-10">
-                                <div class="ml-xl-4">
-                                    <h4 class="font-size-35 font-weight-bold mb-2 text-cyan"
-                                        data-scs-animation-in="fadeInUp">
-                                        CHECK PRICE AND CHOOSE THE PRODUCT FROM HERE
-                                    </h4>
-                                    <h1 class="font-size-46 text-lh-50 font-weight-light mb-6"
-                                        data-scs-animation-in="fadeInUp"
-                                        data-scs-animation-delay="200">
-                                        LESS MONEY MORE PRODUCTS <stong class="font-weight-bold">40% OFF</stong>
-                                    </h1>
-                                    <a href="" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"></a>
-                                    <a href="" class="btn btn-primary transition-3d-hover rounded-lg  py-2 px-md-7 px-3 font-size-16"
-                                       data-scs-animation-in="fadeInUp"
-                                       data-scs-animation-delay="300">
-                                        LET'S SAVE OUR MONEY
-                                    </a>
+                            <div class="js-slide">
+                                <div class="row min-height-438 pt-7 py-md-0">
+                                    <div class="d-none d-xl-block col-auto">
+                                        <div class="max-width-270 min-width-270"></div>
+                                    </div>
+                                    <div class="col-xl col col-md-6 mt-md-8 mt-lg-10">
+                                        <div class="ml-xl-4">
+                                            <h4 class="font-size-35 font-weight-bold mb-2 text-cyan"
+                                                data-scs-animation-in="fadeInUp">
+                                                CHECK PRICE AND CHOOSE THE PRODUCT FROM HERE
+                                            </h4>
+                                            <h1 class="font-size-46 text-lh-50 font-weight-light mb-6"
+                                                data-scs-animation-in="fadeInUp"
+                                                data-scs-animation-delay="200">
+                                                LESS MONEY MORE PRODUCTS <stong class="font-weight-bold">40% OFF</stong>
+                                            </h1>
+                                            <a href="" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"></a>
+                                            <a href="" class="btn btn-primary transition-3d-hover rounded-lg  py-2 px-md-7 px-3 font-size-16"
+                                               data-scs-animation-in="fadeInUp"
+                                               data-scs-animation-delay="300">
+                                                LET'S SAVE OUR MONEY
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-5 col-6 flex-horizontal-center ml-auto ml-md-0"
+                                         data-scs-animation-in="fadeInRight"
+                                         data-scs-animation-delay="500">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-xl-5 col-6 flex-horizontal-center ml-auto ml-md-0"
-                                 data-scs-animation-in="fadeInRight"
-                                 data-scs-animation-delay="500">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="js-slide">
-                        <div class="row min-height-438 pt-7 py-md-0">
-                            <div class="d-none d-xl-block col-auto">
-                                <div class="max-width-270 min-width-270"></div>
-                            </div>
-                            <div class="col-xl col col-md-6 mt-md-8 mt-lg-10">
-                                <div class="ml-xl-4">
-                                    <h4 class="font-size-35 font-weight-bold mb-2 text-cyan"
-                                        data-scs-animation-in="fadeInUp">
-                                        CHECK PRICE AND CHOOSE THE PRODUCT FROM HERE
-                                    </h4>
-                                    <h1 class="font-size-46 text-lh-50 font-weight-light mb-6"
-                                        data-scs-animation-in="fadeInUp"
-                                        data-scs-animation-delay="200">
-                                        LESS EFFORT, BEST PRICE <stong class="font-weight-bold">40% OFF</stong>
-                                    </h1>
-                                    <a href="" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
-                                       data-scs-animation-in="fadeInUp"
-                                       data-scs-animation-delay="300">
-                                       LET'S USE THIS SITE
-                                    </a>
+                            <div class="js-slide">
+                                <div class="row min-height-438 pt-7 py-md-0">
+                                    <div class="d-none d-xl-block col-auto">
+                                        <div class="max-width-270 min-width-270"></div>
+                                    </div>
+                                    <div class="col-xl col col-md-6 mt-md-8 mt-lg-10">
+                                        <div class="ml-xl-4">
+                                            <h4 class="font-size-35 font-weight-bold mb-2 text-cyan"
+                                                data-scs-animation-in="fadeInUp">
+                                                CHECK PRICE AND CHOOSE THE PRODUCT FROM HERE
+                                            </h4>
+                                            <h1 class="font-size-46 text-lh-50 font-weight-light mb-6"
+                                                data-scs-animation-in="fadeInUp"
+                                                data-scs-animation-delay="200">
+                                                LESS EFFORT, BEST PRICE <stong class="font-weight-bold">40% OFF</stong>
+                                            </h1>
+                                            <a href="" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
+                                               data-scs-animation-in="fadeInUp"
+                                               data-scs-animation-delay="300">
+                                               LET'S USE THIS SITE
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-5 col-6 flex-horizontal-center ml-auto ml-md-0"
+                                         data-scs-animation-in="fadeInRight"
+                                         data-scs-animation-delay="500">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-5 col-6 flex-horizontal-center ml-auto ml-md-0"
-                                 data-scs-animation-in="fadeInRight"
-                                 data-scs-animation-delay="500">
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                -->
+                <section class="home">
+                    <div id="carousel" class="carousel slide" data-ride="carousel">
+
+                        <div class="carousel-controls">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel" data-slide-to="0"
+                                    style="background-image: url(images/iphone_apple/1.png);"></li>
+                                <li data-target="#carousel" data-slide-to="1"
+                                    style="background-image: url(images/laptop/1.jpg);"></li>
+                                <li data-target="#carousel" data-slide-to="2"
+                                    style="background-image: url(images/panasonic_TV/1.png);"></li>
+                            </ol>
+
+                            <a class="carousel-control-prev" role="button" data-slide="prev" href="#carousel">
+                                <img src="assets/svg/left-arrow.svg" alt="Previous">
+                            </a>
+                            <a class="carousel-control-next" role="button" data-slide="next" href="#carousel">
+                                <img src="assets/svg/right-arrow.svg" alt="Next">
+                            </a>
+
+                        </div>
+
+                        <div class="carousel-inner" style="height: 400px;">
+                            <div class="carousel-item active" style="background-image: url(images/carousel/carousel2.png);background-size: cover;">
+                                <div class="container">
+                                    <h2>The best iphone with best price</h2>
+                                    <p>Iphone</p>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item" style="background-image: url(images/carousel/carousel5.png);">
+                                <div class="container">
+                                    <h2>The best laptop with best price</h2>
+                                    <p>Laptop</p>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item" style="background-image: url(images/carousel/carousel7.png);">
+                                <div class="container">
+                                    <h2>The best TV with best price</h2>
+                                    <p>TV</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </s>
         </div>
-        -->
-        <section class="home">
-            <div id="carousel" class="carousel slide" data-ride="carousel">
-
-                <div class="carousel-controls">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel" data-slide-to="0" style="background-image: url(images/iphone_apple/1.png);"></li>
-                        <li data-target="#carousel" data-slide-to="1" style="background-image: url(images/laptop/1.jpg);"></li>
-                        <li data-target="#carousel" data-slide-to="2" style="background-image: url(images/panasonic_TV/1.png);"></li>
-                    </ol>
-
-                    <a class="carousel-control-prev" role="button" data-slide="prev" href="#carousel">
-                        <img src="assets/svg/left-arrow.svg" alt="Previous">
-                    </a>
-                    <a class="carousel-control-next" role="button" data-slide="next" href="#carousel">
-                        <img src="assets/svg/right-arrow.svg" alt="Next">
-                    </a>
-
-                </div>
-
-                <div class="carousel-inner">
-                    <div class="carousel-item active" style="background-image: url(images/iphone_apple/1.png);">
-                        <div class="container">
-                            <h2>The best iphone with best price</h2>
-                            <p>Iphone</p>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item" style="background-image: url(images/laptop/1.jpg);">
-                        <div class="container">
-                            <h2>The best laptop with best price</h2>
-                            <p>Laptop</p>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item" style="background-image: url(images/panasonic_TV/1.png);">
-                        <div class="container">
-                            <h2>The best TV with best price</h2>
-                            <p>TV</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
     </div>
-        </div></div>
     <!-- End Slider Section -->
     <div class="container">
+        <!--start preloader-->
+
+        <!--end preloader-->
         <div class="row">
-            <div class="col-xl-3 col-wd-auto d-none d-xl-block" >
-                <div class="max-width-270 min-width-270 pt-xl-13 mt-xl-13" style="margin-top: 0px!important; padding-top: 0px!important;">
+            <div class="col-xl-3 col-wd-auto d-none d-xl-block">
+                <div class="max-width-270 min-width-270 pt-xl-13 mt-xl-13"
+                     style="margin-top: 0px!important; padding-top: 0px!important;">
 
                     <!-- Latest Products -->
                     <aside class="mb-4">
@@ -200,7 +214,8 @@
                             <dv class="d-flex justify-content-between border-bottom border-color-1 flex-md-nowrap flex-wrap border-sm-bottom-0">
                                 <h3 class="section-title section-title__sm mb-0 pb-3 font-size-18">Latest Products</h3>
                             </dv>
-                            <div id="latest-products-container" class="js-slick-carousel u-slick u-slick--gutters-2 overflow-hidden u-slick-overflow-visble pt-3 position-static"
+                            <div id="latest-products-container"
+                                 class="js-slick-carousel u-slick u-slick--gutters-2 overflow-hidden u-slick-overflow-visble pt-3 position-static"
                                  data-slides-show="1"
                                  data-slides-scroll="1"
                                  data-arrows-classes="position-absolute top-0 font-size-17 u-slick__arrow-normal top-10"
@@ -213,13 +228,17 @@
                     <!-- End Latest Products -->
                 </div>
             </div>
-            <div  class="col-xl-9 col-wd-auto max-width-1130">
-
+            <div class="col-xl-9 col-wd-auto max-width-1130">
+                <!--<div id="preloader-for-products" class="row my-loading">-->
+                <!--</div>-->
                 <div id="popular-products-container" class="mb-12">
                 </div>
 
             </div>
         </div>
+    </div>
+    <div id="user-preloading" class="row my-loading">
+        loading
     </div>
 </main>
 <!-- ========== END MAIN CONTENT ========== -->
@@ -289,8 +308,7 @@
 <script src="assets/js/myjs/get-compare-products.js"></script>
 <script src="assets/js/myjs/get-latest-products.js"></script>
 <script src="assets/js/myjs/index.js"></script>
-<script>
+<!--<script src="assets/js/myjs/header.js"></script>-->
 
-</script>
 </body>
 </html>

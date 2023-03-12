@@ -1,21 +1,40 @@
 let currentUser = window.localStorage.getItem('pricechecker-user-name');
 let userMenu = document.getElementById('user-menu');
+let homeElm = document.getElementById("nav-home-li");
+let wishElm = document.getElementById("nav-fav-li");
+let profileElm = document.getElementById("nav-profile-li");
+let productsElm = document.getElementById("nav-myproduct-li")
+let auth = document.getElementById('authentication');
 if(currentUser){
     //show current user name side of right side bar.'<i class="ec ec-user mr-1"></i> Register <span class="text-gray-50">or</span> Sign in'
-    let auth = document.getElementById('authentication');
+
     auth.innerHTML = '<i class="ec ec-user mr-1"></i> Logout  :  ' + currentUser;
     auth.setAttribute('href', '/pricechecker-frontend/user/authentications/logout-user.html');
+
+    homeElm.setAttribute("style", "visibility:visible;");
+    profileElm.setAttribute("style", "visibility:visible;");
+    productsElm.setAttribute("style", "visibility:visible;");
+    wishElm.setAttribute("style", "visibility:visible;");
 }else {
-    let auth = document.getElementById('authentication');
     auth.innerHTML = '<i class="ec ec-user mr-1"></i> Register <span class="text-gray-50">or</span> Sign in';
     auth.setAttribute('href', '/pricechecker-frontend/user/authentications/login-user.html');
+
+    homeElm.setAttribute("style", "visibility:collapse;");
+    profileElm.setAttribute("style", "visibility:collapse;");
+    productsElm.setAttribute("style", "visibility:collapse;");
+    wishElm.setAttribute("style", "visibility:collapse;")
 }
 function onClickedSearch(){
     let searchVal = document.getElementById('search-product').value;
     let searchCategory = "ALL";
     window.localStorage.setItem('pricechecker-search-string', searchVal);
     window.localStorage.setItem('pricechecker-search-category', searchCategory);
-    window.location.href = baseUserPathName + '/compare.html';
+    let curren_url = window.location.href;
+    if(checkExistOrNot(curren_url, "compare")){
+        window.location.href = baseUserPathName + '/compare.html';
+    }else {
+        window.location.href = baseUserPathName + '/index.html';
+    }
 }
 function onClickedFavs(){
     if(currentUser){

@@ -9366,7 +9366,7 @@ a.close.disabled {
 
 .carousel {
   position: relative;
-  height: 300px;
+
   width: 100%;
 }
 
@@ -22341,11 +22341,10 @@ button:focus {
     content: "";
   }
 }
-
 @media (min-width: 768px) {
   .navbar-expand-md {
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   .navbar-expand-md.u-header__navbar--no-space {
     padding-top: 0;
@@ -22353,7 +22352,7 @@ button:focus {
   }
   .navbar-expand-md .u-header__navbar-nav {
     -ms-flex-align: center;
-        align-items: center;
+    align-items: center;
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -22365,8 +22364,8 @@ button:focus {
   .navbar-expand-md .u-header__navbar-nav .u-header__nav-link {
     padding-top: 0.781rem;
     padding-bottom: 0.781rem;
-    padding-right: 0.99rem;
-    padding-left: 0.99rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
   }
   .navbar-expand-md .u-header__navbar-nav .u-header__sub-menu {
     border-top: 0.10938rem solid #fed700;
@@ -22406,15 +22405,15 @@ button:focus {
     display: -ms-flexbox;
     display: flex;
     -ms-flex: 1 0 0%;
-        flex: 1 0 0%;
+    flex: 1 0 0%;
     -ms-flex-direction: column;
-        flex-direction: column;
+    flex-direction: column;
   }
   .navbar-expand-md .u-header__promo-card-deck {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-flow: row wrap;
-        flex-flow: row wrap;
+    flex-flow: row wrap;
   }
   .navbar-expand-md .u-header__promo-card-deck .u-header__promo-item:not(:last-child) .u-header__promo-link {
     position: relative;
@@ -36641,6 +36640,9 @@ blockquote:not(.blockquote) p {
 
 .min-height-438 {
   min-height: 13.74975rem;
+}
+.min-height-356 {
+  min-height: 10.74975rem;
 }
 
 @media (min-width: 768px) {

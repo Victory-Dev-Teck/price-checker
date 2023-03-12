@@ -60,7 +60,7 @@ function convertWalmartResponseForUI(response, eshop, currentPage, numberInPage)
             buff['description'] = row['description'];
             buff['product_url'] = row['link'];
             buff['image_url'] = row['main_image'];
-            buff['price'] = response[i]['offers']['primary']['price'] + "USD";
+            buff['price'] = "$" + response[i]['offers']['primary']['price'];
             buff['eshop'] = eshop;
             retArray.push(buff);
         }

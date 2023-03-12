@@ -37,19 +37,21 @@ function convertResponse2HtmlForLatest(response, shopName, numberOfShow){
                         '   <ul class="list-unstyled products-group mb-0 overflow-visible">';
             for(i = 0; i < resLen; i++){
                 let title = response[i]['title'];
+                title = title.split(",", 1);
                 let description = response[i]['description'];
                 let product_url = response[i]['product_url'];
                 let image_url = response[i]['image_url'];
-                let price = response[i]['price'];
+                let re = /C /gi;
+                let price = response[i]["price"].replace(re, "");
                 resultHtml += '<li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">\n' +
                     '                                            <div class="product-item__outer h-100">\n' +
                     '                                                <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">\n' +
                     '                                                <div class="col-auto product-media-left">\n' +
-                    '                                                        <a href="' + product_url + '" class="max-width-70 d-block"><img class="img-fluid latest-image" src="' + image_url + '" alt="Image Description"></a>\n' +
+                    '                                                        <a href="' + product_url + '" class="max-width-70 d-block" target="_blank"><img class="img-fluid latest-image" src="' + image_url + '" alt="Image Description"></a>\n' +
                     '                                                    </div>\n' +
                     '                                                    <div class="col product-item__body pl-2 pl-lg-3">\n' +
                     '                                                        <div class="mb-4">\n' +
-                    '                                                            <h5 class="product-item__title"><a href="' + product_url + '" class="text-gray-90">' + title + '</a></h5>\n' +
+                    '                                                            <h5 class="product-item__title"><a href="' + product_url + '" class="text-gray-90" target="_blank">' + title + '</a></h5>\n' +
                     '                                                        </div>\n' +
                     '                                                        <div class="flex-center-between">\n' +
                     '                                                            <div class="prodcut-price">\n' +

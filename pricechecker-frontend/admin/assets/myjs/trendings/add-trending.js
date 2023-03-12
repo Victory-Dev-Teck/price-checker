@@ -20,10 +20,12 @@ function addTrending(title, description, productUrl, imageUrl, price, category, 
                     window.location.href = baseAdminPathName + '/authorized/trendings/trendings.html';
                 }else {
                     window.console.log("add trending product error: " + resp['error']);
+                    window.alert(resp['error'])
                 }
             },
             fail: function (response) {
                 window.console.log("add trending product error: " + response);
+                window.alert(response)
             }
         }
     );

@@ -14,7 +14,7 @@ if(isset($_POST['title']) && isset($_POST['description']) && isset($_POST['produ
     $res = mysqli_query($con, $url_check);
     if(mysqli_num_rows($res) > 0){
         $response['status'] = 'failed';
-        $response['error'] = "Product that you would like to add is already exist!".$url_check;
+        $response['error'] = "Product that you would like to add is already exist!";
     }else{
         $insert_data = "INSERT INTO `trending_products` (title, description, product_url, image_url, price, category, eshop)
                                 values('$title', '$description', '$product_url', '$image_url', '$price', '$category', '$eshop')";

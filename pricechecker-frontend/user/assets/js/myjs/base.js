@@ -134,7 +134,8 @@ function goComparePage(title){
 }
 function onClickedCart(title, description, url, thumbnail, price){
     if(userEmail == null){
-        window.location.href = url;
+        // window.location.href = url;
+        window.open(url)
     }else {
         if(!title){
             title='title';
@@ -155,7 +156,8 @@ function onClickedCart(title, description, url, thumbnail, price){
                     'Content-Type' : 'application/json'
                 },
                 success: function (response) {
-                    window.location.href = url;
+                    // window.location.href = url;
+                    window.open(url)
                 },
                 fail: function (response) {
                     window.console.log(response.toString());

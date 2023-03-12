@@ -63,7 +63,7 @@ function convertAmazonResponseForUI(response, eshop, currentPage, numberInPage) 
             buff['description'] = row['title'];
             buff['product_url'] = row['url'];
             buff['image_url'] = row['thumbnail'];
-            buff['price'] = row['price']['current_price'] + row['price']['currency'];
+            buff['price'] = row['price']['currency'] + row['price']['current_price'];
             buff['eshop'] = eshop;
             retArray.push(buff);
         }

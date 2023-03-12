@@ -1,3 +1,19 @@
+preloader = document.getElementById("user-preloading");
+let preloader_html = "<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12\"></div>\n" +
+    "                <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12\">\n" +
+    "                    <div class=\"preloader-single shadow-inner mt-b-30\">\n" +
+    "                        <div class=\"ts_preloading_box\">\n" +
+    "                            <div id=\"ts-preloader-absolute02\">\n" +
+    "                                <div class=\"tsperloader2\" id=\"tsperloader2_four\"></div>\n" +
+    "                                <div class=\"tsperloader2\" id=\"tsperloader2_three\"></div>\n" +
+    "                                <div class=\"tsperloader2\" id=\"tsperloader2_two\"></div>\n" +
+    "                                <div class=\"tsperloader2\" id=\"tsperloader2_one\"></div>\n" +
+    "                            </div>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "                <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12\"></div>";
+preloader.innerHTML = preloader_html;
 async function getAmazonProductsForComparing(searchCategory, searchString,currentPage, maxNumberOfProducts){
     let resultHtml = '';
     let response = {};
@@ -95,7 +111,8 @@ function convertResponse2HtmlForCompare(response, shopName) {
       let description = response[i]["description"];
       let product_url = response[i]["product_url"];
       let image_url = response[i]["image_url"];
-      let price = response[i]["price"];
+      let re = /C /gi;
+      let price = response[i]["price"].replace(re, "");
       resultHtml +=
         '<div class="js-slide">\n' +
         '                                <div class="product-item">\n' +
@@ -104,13 +121,13 @@ function convertResponse2HtmlForCompare(response, shopName) {
         '                                            <div class="product-item__body pb-xl-2">\n' +
         '                                                <h5 class="mb-1 product-item__title"><a href="' +
         product_url +
-        '" class="text-blue font-weight-bold">' +
+        '" class="text-blue font-weight-bold" target="_blank">' +
         title +
         "</a></h5>\n" +
         '                                                <div class="mb-2">\n' +
         '                                                    <a href="' +
         product_url +
-        '" class="d-block text-center"><img class="compare-image" src="' +
+        '" class="d-block text-center" target="_blank"><img class="compare-image" src="' +
         image_url +
         '" alt="Image Description"></a>\n' +
         "                                                </div>\n" +
@@ -137,7 +154,7 @@ function convertResponse2HtmlForCompare(response, shopName) {
         "                                            </div>\n" +
         '                                            <div class="product-item__footer">\n' +
         '                                                <div class="border-top pt-2 flex-center-between flex-wrap">\n' +
-        '                                                    <a data-tip="Go to Compare" onclick="function clicked(name) {goComparePage(name);} clicked(\'' +
+        '                                                    <a data-tip="Go to Compare" onclick="goComparePage(\'' +
         title +
         '\')" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>\n' +
         '                                                    <a  data-tip="Add to Wishlist" onclick="goFavouritePage(\'' +
@@ -176,8 +193,9 @@ function makeTable(value) {
 	    let description = data['description'];
 	    let product_url = data['product_url'];
 	    let image_url = data['image_url'];
-	    let price = data['price'];
-	    document.getElementById("td-product-compare-" + shopName).innerHTML = '<a href="' + product_url + '" class="product">\n' +
+        let re = /C /gi;
+        let price = data["price"].replace(re, "")
+	    document.getElementById("td-product-compare-" + shopName).innerHTML = '<a href="' + product_url + '" class="product" target="_blank">\n' +
 	        '<div class="product-compare-image">\n' +
 	        '<div class="d-flex mb-3">\n' +
 	        '<img class="img-fluid mx-auto" src="' + image_url + '" alt="Image Description">\n' +
@@ -226,11 +244,10 @@ async function getAllComparingProducts(searchCategory, searchString) {
     $.HSCore.components.HSSlickCarousel.init("#product-carousel-Amazon");
     $.HSCore.components.HSSlickCarousel.init("#product-carousel-Walmart");
     $.HSCore.components.HSSlickCarousel.init("#index-carousel")
-  // $(document).trigger("readyAgain");
-
-  // let walmartProducts = getWalmartProducts(numOfShowProducts);
-  //let bestbuyProducts = getBestBuyProductsForComparing(searchCategory,searchString, numOfShowProducts);
-  // document.getElementById('popular-products-container').innerHTML = ebayProducts ;
-  //   document.getElementById("popular-products-container").innerHTML =
-  //     amazonProducts + ebayProducts;
+    //clear search string
+    document.getElementById("search-product").value = window.localStorage.getItem("pricechecker-search-string");
+    let preloader = document.getElementById("user-preloading");
+    preloader.innerHTML = ""
+    preloader.setAttribute("class", "");
+    // window.localStorage.removeItem("pricechecker-search-string");
 }
