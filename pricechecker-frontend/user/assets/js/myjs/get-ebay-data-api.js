@@ -35,10 +35,8 @@ async function getEbayProductsFromAPI(searchCategory, searchString, currentPage,
             retData['error'] = 'Status is ' + textStatus + '\n Response is ' + response.toString();
             return reject(retData);
         }
+        });
     });
-})
-
-
 }
 function convertEbayResponseForUI(response, eshop, currentPage, numberInPage) {
     console.log(response, eshop, currentPage, numberInPage);
@@ -47,7 +45,7 @@ function convertEbayResponseForUI(response, eshop, currentPage, numberInPage) {
     let respLen = response.length;
     let startIndex = 0;
     if (currentPage > 0 && (currentPage * numberInPage) < respLen) {
-        startIndex = currentPage * numberInPage;
+        startIndex = currentPage * numberInPage - 1;
     }
     let endIndex = numberInPage * (currentPage + 1);
     if (startIndex > respLen - 1) {
@@ -59,7 +57,9 @@ function convertEbayResponseForUI(response, eshop, currentPage, numberInPage) {
         endIndex = respLen;
     }
     if (respLen > 0) {
-        for (let i = startIndex; i < endIndex; i++) {
+        let startPrice = parseFloat(window.localStorage.getItem('price-filter-start'));
+        let endPrice = parseFloat(window.localStorage.getItem('price-filter-end'));
+        for (let i = 0; i < respLen; i++) {
             let row = response[i];
             let buff = {};
             buff['title'] = row['name'];
@@ -68,7 +68,27 @@ function convertEbayResponseForUI(response, eshop, currentPage, numberInPage) {
             buff['image_url'] = row['thumbnail'];
             buff['price'] = row['price'];
             buff['eshop'] = eshop;
-            retArray.push(buff);
+            let re = /C $/gi;
+            let price = row['price'].replace(re, "");
+            let price_buff = parseFloat(price);
+            if(startPrice === -1){
+                retArray.push(buff);
+            }else if(startPrice === -1000){
+                if(price_buff > 1000){
+                    retArray.push(buff);
+                }
+            }else {
+                if ((startPrice <= price_buff) && (price_buff <= endPrice)) {
+                    retArray.push(buff);
+                }
+            }
+        }
+        if((0 < retArray.length) && (retArray.length < 4)){
+            let index = 0;
+            for(let i = retArray.length; i < 4; i ++){
+                retArray.push(retArray[index]);
+                index ++;
+            }
         }
     }
     return retArray;

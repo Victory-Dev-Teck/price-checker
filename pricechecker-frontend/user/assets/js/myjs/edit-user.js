@@ -47,6 +47,7 @@ function updateUser(){
                     var resp = JSON.parse(response);
                     if((resp['status'] === 'ok')){
                         window.location.href = baseUserPathName + '/authentications/login-user.html';
+                        window.location.reload(true);
                     }else {
                         window.console.log("add product error: " + resp['error']);
                     }

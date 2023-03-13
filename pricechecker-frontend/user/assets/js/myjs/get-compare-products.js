@@ -167,6 +167,8 @@ function convertResponse2HtmlForCompare(response, shopName) {
         image_url +
         "','" +
         price +
+          "','" +
+          shopName +
         '\')" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>\n' +
         "                                                </div>\n" +
         "                                            </div>\n" +
@@ -243,7 +245,8 @@ async function getAllComparingProducts(searchCategory, searchString) {
     $.HSCore.components.HSSlickCarousel.init("#product-carousel-Ebay");
     $.HSCore.components.HSSlickCarousel.init("#product-carousel-Amazon");
     $.HSCore.components.HSSlickCarousel.init("#product-carousel-Walmart");
-    $.HSCore.components.HSSlickCarousel.init("#index-carousel")
+    $.HSCore.components.HSSlickCarousel.init("#index-carousel");
+    $.HSCore.components.HSSelectPicker.init("#price-filter");
     //clear search string
     document.getElementById("search-product").value = window.localStorage.getItem("pricechecker-search-string");
     let preloader = document.getElementById("user-preloading");

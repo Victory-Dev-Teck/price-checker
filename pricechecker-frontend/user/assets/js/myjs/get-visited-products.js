@@ -47,6 +47,7 @@ function deleteVisitedProduct(id){
             let resJson = JSON.parse(response);
             if(resJson['status'] === 'ok'){
                 window.location.href = baseUserPathName + '/authorized/visited-trends.html'
+                // window.location.reload(true);
             }else{
                 window.console.log(resJson['error']);
             }

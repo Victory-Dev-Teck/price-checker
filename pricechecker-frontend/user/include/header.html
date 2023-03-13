@@ -80,16 +80,16 @@
                         <div class="collapse navbar-collapse u-header__navbar-collapse">
                             <ul class="navbar-nav u-header__navbar-nav">
                                 <!-- Home -->
-                                <li id="nav-home-li" class="nav-item u-header__nav-item">
+                                <li id="nav-home-li" class="nav-item u-header__nav-item cursor">
                                     <a id="nav-home-a" class="nav-link u-header__nav-link" onclick="onClickedHome()">Home</a>
                                 </li>
                                 <!-- End Home -->
                                 <!-- Favourites -->
-                                <li id="nav-fav-li" class="nav-item u-header__nav-item">
+                                <li id="nav-fav-li" class="nav-item u-header__nav-item cursor">
                                     <a id="nav-fav-a" class="nav-link u-header__nav-link" onclick="onClickedFavs()">Wish List</a>
                                 </li>
                                 <!-- End Favourites-->
-                                <li id="nav-profile-li" class="nav-item u-header__nav-item">
+                                <li id="nav-profile-li" class="nav-item u-header__nav-item cursor">
                                     <a id="nav-profile-a" class="nav-link u-header__nav-link" onclick="onClickedMyProfile()">My Profile</a>
                                 </li>
                                 <!-- User Profiles Section -->
@@ -228,14 +228,17 @@
                         <div class="input-group">
                             <input class="form-control py-2 pl-5 font-size-15 border-0 height-40 rounded-left-pill" id="search-product" placeholder="Search for Products" aria-label="Search for Products" aria-describedby="searchProduct1" required>
                             <div class="input-group-append">
-                                <!--&lt;!&ndash; Select &ndash;&gt;-->
-                                <!--<select class="js-select selectpicker dropdown-select custom-search-categories-select"-->
-                                        <!--data-style="btn height-40 text-gray-60 font-weight-normal border-0 rounded-0 bg-white px-5 py-2">-->
-                                    <!--<option value="one" selected>All Categories</option>-->
-                                    <!--<option value="two">Product Name</option>-->
-                                    <!--<option value="three">Brand</option>-->
-                                <!--</select>-->
-                                <!--&lt;!&ndash; End Select &ndash;&gt;-->
+                                <!-- Select -->
+                                <select id="price-filter" class="js-select selectpicker dropdown-select custom-search-categories-select"
+                                        data-style="btn height-40 text-gray-60 font-weight-normal border-0 rounded-0 bg-white px-5 py-2">
+                                    <option value="all price" selected>All Prices</option>
+                                    <option value="one">Up to $40</option>
+                                    <option value="two">$40-$200</option>
+                                    <option value="three">$200-$700</option>
+                                    <option value="three">$700-$1000</option>
+                                    <option value="four">Over $1000</option>
+                                </select>
+                                <!-- End Select -->
                                 <button class="btn btn-dark height-40 py-2 px-3 rounded-right-pill" type="button" onclick="onClickedSearch()" >
                                     <span class="ec ec-search font-size-24"></span>
                                 </button>

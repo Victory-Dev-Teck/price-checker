@@ -1727,7 +1727,7 @@ pre code {
 .table th,
 .table td {
   padding: 0.5rem;
-  vertical-align: top;
+  vertical-align: center;
   border-top: 1px solid #ecedf2;
 }
 
@@ -12230,7 +12230,7 @@ button.bg-indigo:focus {
 
 .pb-2,
 .py-2 {
-  padding-bottom: 0.5rem !important;
+  padding-bottom: 0.9rem !important;
 }
 
 .pl-2,

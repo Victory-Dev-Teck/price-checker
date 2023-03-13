@@ -25,10 +25,13 @@
     <link rel="stylesheet" href="/pricechecker-frontend/user/assets/css/theme.css">
     <!--    customized style-->
     <link rel="stylesheet" href="/pricechecker-frontend/user/assets/css/custom.css">
+    <!-- Preloader CSS
+        ============================================ -->
+    <link rel="stylesheet" href="../assets/css/preloader-style.css">
 
 </head>
 <body>
-<header>
+<header class="u-header u-header-left-aligned-nav">
 </header>
 <div id="table-container" class="container">
     <h2>Tracked Products Table</h2>
@@ -39,14 +42,19 @@
             <th>Image</th>
             <th>Title</th>
             <th>Description</th>
-            <th>Price</th>
-            <th>Link</th>
-            <th>Action</th>
+            <th>Old Price</th>
+            <th >Current Price</th>
+            <th style="width: 80px;">E-Shop</th>
+            <th style="width: 60px;">Link</th>
+            <th style="width: 120px;">Action</th>
         </tr>
         </thead>
         <tbody id="tracked-tbody">
         </tbody>
     </table>
+</div>
+<div id="user-preloading" class="row my-loading">
+    loading
 </div>
 <footer id="footer">
 </footer>
@@ -88,6 +96,13 @@
 <!-- JS Plugins Init. -->
 <script src="/pricechecker-frontend/user/assets/js/myjs/common.js"></script>
 <script src="/pricechecker-frontend/user/assets/js/myjs/base.js"></script>
+<script src="../assets/js/myjs/get-amazon-data-api.js"></script>
+<script src="../assets/js/myjs/get-amazon-data-mock.js"></script>
+<script src="../assets/js/myjs/get-ebay-data-api.js"></script>
+<script src="../assets/js/myjs/get-ebay-data-mock.js"></script>
+<script src="../assets/js/myjs/get-walmart-data-api.js"></script>
+<script src="../assets/js/myjs/get-walmart-data-mock.js"></script>
+<script src="../assets/js/myjs/get-products-for-tracking.js"></script>
 <script src="/pricechecker-frontend/user/assets/js/myjs/get-tracked-products.js"></script>
 </body>
 </html>

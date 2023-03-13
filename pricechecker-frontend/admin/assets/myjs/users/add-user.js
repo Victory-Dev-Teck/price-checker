@@ -19,6 +19,7 @@ function addUser(){
                     var resp = JSON.parse(response);
                     if((resp['status'] === 'ok')){
                         window.location.href = baseAdminPathName + '/authorized/users/users.html';
+                        window.location.reload(true);
                     }else {
                         window.console.log("add product error: " + resp['error']);
                         window.alert("add product error: " + resp['error']);

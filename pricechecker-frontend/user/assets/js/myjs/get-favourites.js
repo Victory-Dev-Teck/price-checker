@@ -17,18 +17,20 @@ function getFavs(){
                     let product_url = resJson['data'][i]['product_url'];
                     let image_url = resJson['data'][i]['image_url'];
                     let price = resJson['data'][i]['price'];
+                    let eshop = resJson['data'][i]['eshop'];
                     let id = resJson['data'][i]['id'];
                     resultHtml += '<tr>\n' +
                         '                    <td><img src="' + image_url + '" width="100"/></td>\n' +
                         '                    <td>' + title + '</td>' +
                         '                    <td>' + description + '</td>' +
                         '                    <td>' + price + '</td>' +
-                        '                    <td><a onclick="onClickedCart(\'' + title + '\',\'' + description + '\',\'' + product_url + '\',\''+ image_url + '\',\'' +  price + '\')" target="_blank" class="btn btn-light">Order Now</a>\n' +
+                        '                    <td>' + eshop + '</td>' +
+                        '                    <td><a onclick="onClickedCart(\'' + title + '\',\'' + description + '\',\'' + product_url + '\',\''+ image_url + '\',\'' +  price + '\')" target="_blank" class="btn btn-light">Order</a>\n' +
                         '                    </td>\n' +
-                        '                    <td><a onclick="function onclicked(id){deleteFav(id);} onclicked(' + id + ')"' +
-                        '                           class="btn btn-light">Delete</a>' +
-                        '                        <a onclick="onClickedTrack(\'' + title + '\',\'' +  description + '\',\'' + product_url + '\',\'' + image_url + '\',\'' + price + '\')"' +
-                        '                           class="btn btn-light">Track</a></td>\n' +
+                        '                    <td><div class="row"> <a onclick="function onclicked(id){deleteFav(id);} onclicked(' + id + ')"' +
+                        '                           class="btn btn-light col-6">Delete</a>' +
+                        '                        <a onclick="onClickedTrack(\'' + title + '\',\'' +  description + '\',\'' + product_url + '\',\'' + image_url + '\',\'' + price + '\',\'' + eshop + '\')"' +
+                        '                           class="btn btn-light col-6">Track</a></div></td>\n' +
                         '                </tr>';
                 }
             }else{

@@ -1,4 +1,4 @@
-async function getWalmartProductsFromMock(searchCategory, searchString, currentPage, maxNumberOfProducts, returnData){
+async function getWalmartProductsFromMock(searchCategory, searchString, currentPage, maxNumberOfProducts){
     let retArray = [];
     let retData = {};
     if(searchString === ''){

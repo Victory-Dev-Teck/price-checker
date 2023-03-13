@@ -18,6 +18,7 @@ if(isset($_GET['email'])){
             $buff['title'] = $row['title'];
             $buff['description'] = $row['description'];
             $buff['price'] = $row['price'];
+            $buff['eshop'] = $row['eshop'];
             array_push($data, $buff);
         }
         $response['status'] = 'ok';

@@ -47,3 +47,8 @@ tbody tr td{
     margin-left: 0px;
     margin-right: 0px;
 }
+
+.cursor:hover{
+    cursor: pointer;
+    color: #000;
+}

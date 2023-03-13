@@ -41,7 +41,7 @@ function convertWalmartResponseForUI(response, eshop, currentPage, numberInPage)
     let respLen = response.length;
     let startIndex = 0;
     if (currentPage > 0) {
-        startIndex = currentPage * numberInPage;
+        startIndex = currentPage * numberInPage - 1;
     }
     let endIndex = numberInPage * (currentPage + 1);
     if (startIndex > respLen - 1) {
@@ -52,8 +52,10 @@ function convertWalmartResponseForUI(response, eshop, currentPage, numberInPage)
     if (endIndex > respLen - 1) {
         endIndex = respLen;
     }
+    let startPrice = parseFloat(window.localStorage.getItem('price-filter-start'));
+    let endPrice = parseFloat(window.localStorage.getItem('price-filter-end'));
     if (respLen > 0) {
-        for (let i = startIndex; i < endIndex; i++) {
+        for (let i = 0; i < respLen; i++) {
             let row = response[i]['product'];
             let buff = {};
             buff['title'] = row['title'];
@@ -62,7 +64,26 @@ function convertWalmartResponseForUI(response, eshop, currentPage, numberInPage)
             buff['image_url'] = row['main_image'];
             buff['price'] = "$" + response[i]['offers']['primary']['price'];
             buff['eshop'] = eshop;
-            retArray.push(buff);
+
+            let price_buff = parseFloat(response[i]['offers']['primary']['price']);
+            if(startPrice === -1){
+                retArray.push(buff);
+            }else if(startPrice === -1000){
+                if(price_buff > 1000){
+                    retArray.push(buff);
+                }
+            }else {
+                if ((startPrice <= price_buff) && (price_buff <= endPrice)) {
+                    retArray.push(buff);
+                }
+            }
+        }
+        if((0 < retArray.length) && (retArray.length < 4)){
+            let index = 0;
+            for(let i = retArray.length; i < 4; i ++){
+                retArray.push(retArray[index]);
+                index ++;
+            }
         }
     }
     return retArray;

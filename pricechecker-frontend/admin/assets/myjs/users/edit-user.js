@@ -17,11 +17,13 @@ function getUserById(id){
                 }else {
                     window.console.log("update user error: " + resp['error']);
                     window.location.href = baseAdminPathName + '/authorized/users/users.html';
+                    window.location.reload(true);
                 }
             },
             fail: function (response) {
                 window.console.log("update user error: " + response);
                 window.location.href = baseAdminPathName + '/authorized/users/users.html';
+                window.location.reload(true);
             }
         }
     );

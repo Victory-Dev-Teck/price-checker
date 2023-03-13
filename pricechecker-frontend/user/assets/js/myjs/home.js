@@ -12,4 +12,5 @@ if(email){
 }else {
     window.console.log("You should login to this site");
     window.location.href = '/pricechecker-frontend/';
+    window.location.reload(true);
 }

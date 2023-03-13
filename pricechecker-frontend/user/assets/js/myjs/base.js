@@ -93,10 +93,26 @@ $(document).on('ready readyAgain', function(){
     // initialization of select picker
     $.HSCore.components.HSSelectPicker.init('.js-select');
 });
-
+$(window).on('onbeforeunload ', function () {
+    console.log("close");
+    window.localStorage.setItem('price-filter-start', '-11111');
+});
+$(window).on('unload', function() {
+    alert('Handler for .unload() called.');
+});
 let userEmail = window.localStorage.getItem('pricechecker-user-name');
+if(window.localStorage.getItem('price-filter-start') === null){
+    window.localStorage.setItem('price-filter-start', '-1');
+}
+if(window.localStorage.getItem('price-filter-end') === null){
+    window.localStorage.setItem('price-filter-end', '0');
+}
+if(window.localStorage.getItem('price-filter-current-index') === null){
+    window.localStorage.setItem('price-filter-current-index', '0');
+}
+
 let compareTableResult = [];
-function goFavouritePage(title,description,url, thumbnail,price) {
+function goFavouritePage(title,description,url, thumbnail,price,eshop) {
     if(userEmail == null){
         alert('You should login to this site for favouring!');
     }else {
@@ -113,13 +129,14 @@ function goFavouritePage(title,description,url, thumbnail,price) {
             {
                 async : false,
                 method : "GET",
-                url : baseServerPathNameForUser + '/authorized/add-fav-product.php?email=' + userEmail +'&title=' + title + '&description=' + description + '&url=' + url + '&thumbnail=' + thumbnail + '&price=' + price,
+                url : baseServerPathNameForUser + '/authorized/add-fav-product.php?email=' + userEmail +'&title=' + title + '&description=' + description + '&url=' + url + '&thumbnail=' + thumbnail + '&price=' + price + '&eshop=' + eshop,
                 headers:{
                     'Accept' : 'application/json',
                     'Content-Type' : 'application/json'
                 },
                 success: function (response) {
                     window.location.href = baseUserPathName + '/authorized/favourites.html';
+                    // window.location.reload(true);
                 },
                 fail: function (response) {
                     alert(response.toString());
@@ -131,6 +148,7 @@ function goFavouritePage(title,description,url, thumbnail,price) {
 function goComparePage(title){
     window.localStorage.setItem('pricechecker-search-string', title);
     window.location.href = baseUserPathName + '/compare.html';
+    // window.location.reload(true);
 }
 function onClickedCart(title, description, url, thumbnail, price){
     if(userEmail == null){
@@ -158,6 +176,7 @@ function onClickedCart(title, description, url, thumbnail, price){
                 success: function (response) {
                     // window.location.href = url;
                     window.open(url)
+                    // window.location.reload(true);
                 },
                 fail: function (response) {
                     window.console.log(response.toString());
@@ -166,7 +185,7 @@ function onClickedCart(title, description, url, thumbnail, price){
         );
     }
 }
-function onClickedTrack(title, description, url, thumbnail, price){
+function onClickedTrack(title, description, url, thumbnail, price, eshop){
     if(userEmail == null){
         alert('You should login to this site for tracking!');
     }else {
@@ -183,13 +202,15 @@ function onClickedTrack(title, description, url, thumbnail, price){
             {
                 async : false,
                 method : "GET",
-                url : baseServerPathNameForUser + '/authorized/add-track-product.php?email=' + userEmail +'&title=' + title + '&description=' + description + '&url=' + url + '&thumbnail=' + thumbnail + '&price=' + price,
+                url : baseServerPathNameForUser + '/authorized/add-track-product.php?email=' + userEmail +'&title=' + title + '&description=' + description + '&url=' + url + '&thumbnail=' + thumbnail + '&price=' + price + '&eshop=' + eshop,
                 headers:{
                     'Accept' : 'application/json',
                     'Content-Type' : 'application/json'
                 },
                 success: function (response) {
                     window.location.href = baseUserPathName + '/authorized/track-products.html';
+                    // // window.location.reload(true);
+                    // handleHardReload(baseUserPathName + '/authorized/track-products.html')
                 },
                 fail: function (response) {
                     window.console.log(response.toString());
@@ -204,4 +225,17 @@ function checkExistOrNot(str1,str2)
   return true
  else
    return false
+}
+
+async function handleHardReload(url) {
+    await fetch(url, {
+        headers: {
+            Pragma: 'no-cache',
+            Expires: '-1',
+            'Cache-Control': 'no-cache',
+        },
+    });
+    window.location.href = url;
+    // This is to ensure reload with url's having '#'
+    window.location.reload();
 }
