@@ -58,8 +58,16 @@ function convertEbayResponseForUI(response, eshop, currentPage, numberInPage) {
         endIndex = respLen;
     }
     if (respLen > 0) {
-        let startPrice = parseFloat(window.localStorage.getItem('price-filter-start'));
-        let endPrice = parseFloat(window.localStorage.getItem('price-filter-end'));
+        let startPriceStr = window.localStorage.getItem('price-filter-start');
+        let endPriceStr = window.localStorage.getItem('price-filter-end');
+        let startPrice = -1;
+        let endPrice = 0;
+        if (startPriceStr){
+            startPrice = parseInt(startPriceStr);
+        }
+        if(endPriceStr){
+            endPrice = parseInt(startPriceStr);
+        }
         for (let i = 0; i < respLen; i++) {
             let row = response[i];
             let buff = {};
@@ -69,7 +77,7 @@ function convertEbayResponseForUI(response, eshop, currentPage, numberInPage) {
             buff['image_url'] = row['thumbnail'];
             buff['price'] = row['price'];
             buff['eshop'] = eshop;
-            let re = /C $/gi;
+            let re = /C \$/gi;
             let price = row['price'].replace(re, "");
             let price_buff = parseFloat(price);
             if(startPrice === -1){

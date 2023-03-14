@@ -57,9 +57,18 @@ function convertWalmartResponseForUI(response, eshop, currentPage, numberInPage)
     if (endIndex > respLen - 1) {
         endIndex = respLen;
     }
-    let startPrice = parseFloat(window.localStorage.getItem('price-filter-start'));
-    let endPrice = parseFloat(window.localStorage.getItem('price-filter-end'));
+
     if (respLen > 0) {
+        let startPriceStr = window.localStorage.getItem('price-filter-start');
+        let endPriceStr = window.localStorage.getItem('price-filter-end');
+        let startPrice = -1;
+        let endPrice = 0;
+        if (startPriceStr){
+            startPrice = parseInt(startPriceStr);
+        }
+        if(endPriceStr){
+            endPrice = parseInt(startPriceStr);
+        }
         for (let i = 0; i < respLen; i++) {
             let row = response[i]['product'];
             let buff = {};

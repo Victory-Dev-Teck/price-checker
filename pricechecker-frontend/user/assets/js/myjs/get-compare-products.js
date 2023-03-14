@@ -259,6 +259,6 @@ async function getAllComparingProducts(searchCategory, searchString) {
     preloader.innerHTML = ""
     preloader.setAttribute("class", "");
 
-    
+
     // window.localStorage.removeItem("pricechecker-search-string");
 }

@@ -59,19 +59,16 @@ function convertAmazonResponseForUI(response, eshop, currentPage, numberInPage) 
             endIndex = respLen;
         }
         if (respLen > 0) {
-            // for (let i = startIndex; i < endIndex; i++) {
-            //     let row = resp[i];
-            //     let buff = {};
-            //     buff['title'] = row['title'];
-            //     buff['description'] = row['title'];
-            //     buff['product_url'] = row['url'];
-            //     buff['image_url'] = row['thumbnail'];
-            //     buff['price'] = row['price']['currency'] + row['price']['current_price'];
-            //     buff['eshop'] = eshop;
-            //     retArray.push(buff);
-            // }
-            let startPrice = parseFloat(window.localStorage.getItem('price-filter-start'));
-            let endPrice = parseFloat(window.localStorage.getItem('price-filter-end'));
+            let startPriceStr = window.localStorage.getItem('price-filter-start');
+            let endPriceStr = window.localStorage.getItem('price-filter-end');
+            let startPrice = -1;
+            let endPrice = 0;
+            if (startPriceStr){
+                startPrice = parseInt(startPriceStr);
+            }
+            if(endPriceStr){
+                endPrice = parseInt(startPriceStr);
+            }
             for (let i = 0; i < respLen; i++) {
                 let row = resp[i];
                 let buff = {};
