@@ -39,6 +39,7 @@ async function getAmazonProductsFromApi(searchCategory, searchString, currentPag
     });
 }
 function convertAmazonResponseForUI(response, eshop, currentPage, numberInPage) {
+    console.log(response, eshop, currentPage, numberInPage);
     let retArray = [];
     let resp = response['result'];
     let respLen = resp.length;
