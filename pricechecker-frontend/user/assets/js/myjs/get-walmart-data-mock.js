@@ -18,12 +18,12 @@ async function getWalmartProductsFromMock(searchCategory, searchString, currentP
             setTimeout(function() {
                 let respBuff = JSON.parse(response);
 
-                retArray = convertWalmartResponseForUI(respBuff['data']['search_results'], 'Amazon', currentPage, maxNumberOfProducts);
+                retArray = convertWalmartResponseForUI(respBuff['data']['search_results'], 'Walmart', currentPage, maxNumberOfProducts);
                 retData['error'] = "ok";
 
                 retData['data'] = retArray;
                 return resolve(retData);
-            }, 4000);
+            }, 100);
 
         },
         fail: function (response, textStatus) {

@@ -20,7 +20,7 @@ async function getAmazonProductsFromApi(searchCategory, searchString, currentPag
                 "X-RapidAPI-Host": "amazon23.p.rapidapi.com"
             },
             success: function (response) {
-
+                window.console.log("amazon response:" + response);
                 var myJsonString = JSON.stringify(response);
 
                 let respBuff = JSON.parse(myJsonString);

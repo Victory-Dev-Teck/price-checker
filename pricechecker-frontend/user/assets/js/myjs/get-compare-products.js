@@ -241,7 +241,7 @@ async function getAllComparingProducts(searchCategory, searchString) {
         1,
         numOfShowProducts
     );
-  document.getElementById("popular-products-container").innerHTML += walmartProducts;
+    document.getElementById("popular-products-container").innerHTML += walmartProducts;
     $.HSCore.components.HSSlickCarousel.init("#product-carousel-Ebay");
     $.HSCore.components.HSSlickCarousel.init("#product-carousel-Amazon");
     $.HSCore.components.HSSlickCarousel.init("#product-carousel-Walmart");

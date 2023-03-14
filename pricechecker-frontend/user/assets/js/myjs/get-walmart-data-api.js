@@ -16,11 +16,14 @@ async function getWalmartFromApi(searchCategory, searchString, currentPage, maxN
             'Content-Type' : 'application/json'
         },
         success: function (response) {
-
+            window.console.log("walmart response:" + response);
             var myJsonString = JSON.stringify(response);
             let respBuff = JSON.parse(myJsonString);
-
-            retArray = convertWalmartResponseForUI(respBuff['search_results'], 'Walmart', currentPage, maxNumberOfProducts);
+            if(respBuff['search_results']  !== null){
+                retArray = convertWalmartResponseForUI(respBuff['search_results'], 'Walmart', currentPage, maxNumberOfProducts);
+            }else {
+                window.console.log(response);
+            }
             retData['error'] = "ok";
 
             retData['data'] = retArray;
