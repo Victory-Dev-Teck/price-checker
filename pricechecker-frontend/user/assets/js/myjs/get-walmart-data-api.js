@@ -10,7 +10,8 @@ async function getWalmartFromApi(searchCategory, searchString, currentPage, maxN
         "async" : true,
         "crossDomain" : true,
         "method" : "GET",
-        url : 'https://api.bluecartapi.com/request?api_key=3C494B3DB5A4459F885679B53BF32ECE&search_term=' + searchString + '&type=search',
+        url : 'https://api.bluecartapi.com/request?api_key=84E30F5FC5FA44029956F1FEFA2D3CB1' +
+            '&search_term=' + searchString + '&type=search',
         headers:{
             'Accept' : 'application/json',
             'Content-Type' : 'application/json'

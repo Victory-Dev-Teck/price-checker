@@ -240,17 +240,17 @@ async function getAllComparingProducts(searchCategory, searchString) {
   // console.log($.HSCore.components.HSSlickCarousel)
   // $.HSCore.components.HSSlickCarousel.init("#product-carousel-Amazon");
 
-  // let walmartProducts = await getWalmartProductsForComparing(
-  //     searchCategory,
-  //       searchString,
-  //       1,
-  //       numOfShowProducts
-  //   );
-  //   document.getElementById("popular-products-container").innerHTML += walmartProducts;
+  let walmartProducts = await getWalmartProductsForComparing(
+      searchCategory,
+        searchString,
+        1,
+        numOfShowProducts
+    );
+    document.getElementById("popular-products-container").innerHTML += walmartProducts;
     $.HSCore.components.HSSelectPicker.init("#price-filter");
     $.HSCore.components.HSSlickCarousel.init("#product-carousel-Ebay");
     $.HSCore.components.HSSlickCarousel.init("#product-carousel-Amazon");
-    // $.HSCore.components.HSSlickCarousel.init("#product-carousel-Walmart");
+    $.HSCore.components.HSSlickCarousel.init("#product-carousel-Walmart");
     $.HSCore.components.HSSlickCarousel.init("#index-carousel");
 
     //clear search string
