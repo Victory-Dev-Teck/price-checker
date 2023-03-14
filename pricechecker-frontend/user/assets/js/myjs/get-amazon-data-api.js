@@ -91,12 +91,12 @@ function convertAmazonResponseForUI(response, eshop, currentPage, numberInPage) 
                 }
             }
         }
-    }
-    if((0 < retArray.length) && (retArray.length < 4)){
-        let index = 0;
-        for(let i = retArray.length; i < 4; i ++){
-            retArray.push(retArray[index]);
-            index ++;
+        if((0 < retArray.length) && (retArray.length < 4)){
+            let index = 0;
+            for(let i = retArray.length; i < 4; i ++){
+                retArray.push(retArray[index]);
+                index ++;
+            }
         }
     }
     return retArray;

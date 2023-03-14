@@ -9,7 +9,7 @@ var currentPageOfAmazon = 0;
 var currentPageOfBestbuy = 0;
 var currentPageOfEbay = 0;
 var currentPageOfWalmart = 0;
-var isMockData = false;
+var isMockData = true;
 function objLength(obj){
     var i=0;
     for (var x in obj){
