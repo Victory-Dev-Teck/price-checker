@@ -3,13 +3,12 @@ async function getEbayProductsFromAPI(searchCategory, searchString, currentPage,
     let retData = {};
     let url = '';
     if (searchString) {
-        url = "https://ebay-data-scraper.p.rapidapi.com/products?page_number="+currentPage + "&product_name=" + searchString + "&country=canada";
+        url = "https://ebay-data-scraper.p.rapidapi.com/products?page_number=" + currentPage + "&product_name=" + searchString + "&country=canada";
     } else {
         url = "https://ebay-data-scraper.p.rapidapi.com/products?page_number=1&product_name=laptop&country=canada";
     }
 
     return new Promise((resolve, reject) => {
-
         $.ajax({
         "async": false,
         "crossDomain": true,
@@ -20,19 +19,20 @@ async function getEbayProductsFromAPI(searchCategory, searchString, currentPage,
             "X-RapidAPI-Host": "ebay-data-scraper.p.rapidapi.com"
         },
         success: function (response) {
-
             var myJsonString = JSON.stringify(response);
 
             let resp = JSON.parse(myJsonString);
-
-            retArray = convertEbayResponseForUI(resp, 'Ebay', currentPage, maxNumberOfProducts);
-            retData['error'] = "ok";
+            if(resp){
+                retArray = convertEbayResponseForUI(resp, 'Ebay', currentPage, maxNumberOfProducts);
+                retData['error'] = "ok";
+            }
 
             retData['data'] = retArray;
             return resolve(retData);
         },
         fail: function (response, textStatus) {
-            retData['error'] = 'Status is ' + textStatus + '\n Response is ' + response.toString();
+            retData['error'] = 'Ebay Status is ' + textStatus + '\n Response is ' + response.toString();
+            console.log(retData['error']);
             return reject(retData);
         }
         });
