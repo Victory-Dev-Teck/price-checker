@@ -73,7 +73,6 @@ async function getWalmartProductsForComparing(searchCategory, searchString, curr
 function convertResponse2HtmlForCompare(response, shopName) {
   let resultHtml = "";
   let _length = response.length;
-  console.log(response);
   if (_length > 0) {
     let i = 0;
     let b = { "shop-name": shopName.toLowerCase(), data: response[0] };
@@ -252,7 +251,7 @@ async function getAllComparingProducts(searchCategory, searchString) {
     $.HSCore.components.HSSlickCarousel.init("#product-carousel-Amazon");
     $.HSCore.components.HSSlickCarousel.init("#product-carousel-Walmart");
     $.HSCore.components.HSSlickCarousel.init("#index-carousel");
-    $.HSCore.components.HSSelectPicker.init("#price-filter");
+    // $.HSCore.components.HSSelectPicker.init("#price-filter");
     //clear search string
     document.getElementById("search-product").value = window.localStorage.getItem("pricechecker-search-string");
     let preloader = document.getElementById("user-preloading");
