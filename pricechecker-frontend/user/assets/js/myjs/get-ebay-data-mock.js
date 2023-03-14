@@ -24,7 +24,7 @@ async function getEbayProductsFromMock(searchCategory, searchString, currentPage
 
                 retData['data'] = retArray;
                 return resolve(retData);
-            }, 100);
+            }, 5000);
 
         },
         fail: function (response, textStatus) {

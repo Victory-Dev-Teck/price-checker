@@ -20,7 +20,6 @@ async function getAmazonProductsFromApi(searchCategory, searchString, currentPag
                 "X-RapidAPI-Host": "amazon23.p.rapidapi.com"
             },
             success: function (response) {
-                window.console.log("amazon response:" + response);
                 var myJsonString = JSON.stringify(response);
 
                 let respBuff = JSON.parse(myJsonString);
@@ -40,7 +39,6 @@ async function getAmazonProductsFromApi(searchCategory, searchString, currentPag
     });
 }
 function convertAmazonResponseForUI(response, eshop, currentPage, numberInPage) {
-    console.log(response, eshop, currentPage, numberInPage);
     let retArray = [];
     let resp = response['result'];
     if (resp){
@@ -67,7 +65,7 @@ function convertAmazonResponseForUI(response, eshop, currentPage, numberInPage) 
                 startPrice = parseInt(startPriceStr);
             }
             if(endPriceStr){
-                endPrice = parseInt(startPriceStr);
+                endPrice = parseInt(endPriceStr);
             }
             for (let i = 0; i < respLen; i++) {
                 let row = resp[i];

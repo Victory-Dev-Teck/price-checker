@@ -38,6 +38,7 @@ function convertResponse2HtmlForLatest(response, shopName, numberOfShow){
             resultHtml = '<div class="js-slide">\n' +
                         '   <ul class="list-unstyled products-group mb-0 overflow-visible">';
             for(i = 0; i < resLen; i++){
+                console.log("latest : " + shopName + ":" + response[i]['title']);
                 let title = response[i]['title'];
                 title = title.split(",", 1);
                 let description = response[i]['description'];

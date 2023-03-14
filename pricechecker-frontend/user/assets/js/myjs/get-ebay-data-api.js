@@ -19,15 +19,12 @@ async function getEbayProductsFromAPI(searchCategory, searchString, currentPage,
             "X-RapidAPI-Host": "ebay-data-scraper.p.rapidapi.com"
         },
         success: function (response) {
-            window.console.log("ebay response:" + response);
             var myJsonString = JSON.stringify(response);
-
             let resp = JSON.parse(myJsonString);
             if(resp){
                 retArray = convertEbayResponseForUI(resp, 'Ebay', currentPage, maxNumberOfProducts);
-                retData['error'] = "ok";
             }
-
+            retData['error'] = "ok";
             retData['data'] = retArray;
             return resolve(retData);
         },
@@ -40,7 +37,6 @@ async function getEbayProductsFromAPI(searchCategory, searchString, currentPage,
     });
 }
 function convertEbayResponseForUI(response, eshop, currentPage, numberInPage) {
-    console.log(response, eshop, currentPage, numberInPage);
     let retArray = [];
 
     let respLen = response.length;
@@ -66,7 +62,7 @@ function convertEbayResponseForUI(response, eshop, currentPage, numberInPage) {
             startPrice = parseInt(startPriceStr);
         }
         if(endPriceStr){
-            endPrice = parseInt(startPriceStr);
+            endPrice = parseInt(endPriceStr);
         }
         for (let i = 0; i < respLen; i++) {
             let row = response[i];

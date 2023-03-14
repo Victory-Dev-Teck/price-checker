@@ -112,6 +112,7 @@ function convertResponse2HtmlForCompare(response, shopName) {
       "                                }\n" +
       "                            }]'>";
     for (i = 0; i < _length; i++) {
+        console.log("comparing : " + shopName + ":" + response[i]['title']);
       let title = response[i]["title"];
       let description = response[i]["description"];
       let product_url = response[i]["product_url"];
@@ -247,11 +248,12 @@ async function getAllComparingProducts(searchCategory, searchString) {
         numOfShowProducts
     );
     document.getElementById("popular-products-container").innerHTML += walmartProducts;
-    $.HSCore.components.HSSelectPicker.init("#price-filter");
+
     $.HSCore.components.HSSlickCarousel.init("#product-carousel-Ebay");
     $.HSCore.components.HSSlickCarousel.init("#product-carousel-Amazon");
     $.HSCore.components.HSSlickCarousel.init("#product-carousel-Walmart");
     $.HSCore.components.HSSlickCarousel.init("#index-carousel");
+    $.HSCore.components.HSSelectPicker.init("#price-filter");
 
     //clear search string
     document.getElementById("search-product").value = window.localStorage.getItem("pricechecker-search-string");

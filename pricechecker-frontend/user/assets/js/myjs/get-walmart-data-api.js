@@ -40,7 +40,6 @@ async function getWalmartFromApi(searchCategory, searchString, currentPage, maxN
 })  ;
 }
 function convertWalmartResponseForUI(response, eshop, currentPage, numberInPage) {
-    console.log(response, eshop, currentPage, numberInPage);
     let retArray = [];
 
     let respLen = response.length;
@@ -67,7 +66,7 @@ function convertWalmartResponseForUI(response, eshop, currentPage, numberInPage)
             startPrice = parseInt(startPriceStr);
         }
         if(endPriceStr){
-            endPrice = parseInt(startPriceStr);
+            endPrice = parseInt(endPriceStr);
         }
         for (let i = 0; i < respLen; i++) {
             let row = response[i]['product'];
