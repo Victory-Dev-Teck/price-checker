@@ -19,6 +19,7 @@ async function getEbayProductsFromAPI(searchCategory, searchString, currentPage,
             "X-RapidAPI-Host": "ebay-data-scraper.p.rapidapi.com"
         },
         success: function (response) {
+            window.console.log("ebay response:" + response);
             var myJsonString = JSON.stringify(response);
 
             let resp = JSON.parse(myJsonString);
@@ -32,7 +33,7 @@ async function getEbayProductsFromAPI(searchCategory, searchString, currentPage,
         },
         fail: function (response, textStatus) {
             retData['error'] = 'Ebay Status is ' + textStatus + '\n Response is ' + response.toString();
-            console.log(retData['error']);
+            window.console.log("ebay response:" + response.toString());
             return reject(retData);
         }
         });

@@ -22,7 +22,9 @@ async function getEbayProducts(maxNumberOfProducts){
         response = await getEbayProductsFromAPI("", "", 1, 60);
     }
     if(response['error'] === 'ok'){
-        resultHtml += convertResponse2HtmlForLatest(response['data'], "Ebay");
+        if(response['data']){
+            resultHtml += convertResponse2HtmlForLatest(response['data'], "Ebay");
+        }
     }else {
         resultHtml += response['error'];
     }

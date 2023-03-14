@@ -23,7 +23,9 @@ async function getAmazonProductsForComparing(searchCategory, searchString,curren
         response = await getAmazonProductsFromApi("", searchString, currentPage,  maxNumberOfProducts);
     }
     if(response['error'] === 'ok'){
-        resultHtml += convertResponse2HtmlForCompare(response['data'], "Amazon");
+        if(response['data']){
+            resultHtml += convertResponse2HtmlForCompare(response['data'], "Amazon");
+        }
     }else {
         resultHtml += response['error'];
     }   
@@ -40,7 +42,9 @@ async function getEbayProductsForComparing(searchCategory, searchString, current
         response = await getEbayProductsFromAPI(searchCategory, searchString,currentPage, maxNumberOfProducts);
     }
     if(response['error'] === 'ok'){
-        resultHtml += convertResponse2HtmlForCompare(response['data'], "Ebay");
+        if(response['data']){
+            resultHtml += convertResponse2HtmlForCompare(response['data'], "Ebay");
+        }
     }else {
         resultHtml += response['error'];
     }
@@ -57,7 +61,9 @@ async function getWalmartProductsForComparing(searchCategory, searchString, curr
         response = await getWalmartFromApi(searchCategory, searchString,currentPage, maxNumberOfProducts);
     }
     if(response['error'] === 'ok'){
-        resultHtml += convertResponse2HtmlForCompare(response['data'], "Walmart");
+        if(response['data']){
+            resultHtml += convertResponse2HtmlForCompare(response['data'], "Walmart");
+        }
     }else {
         resultHtml += response['error'];
     }

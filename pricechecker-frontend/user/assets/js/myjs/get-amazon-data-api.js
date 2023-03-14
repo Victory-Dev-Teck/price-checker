@@ -33,6 +33,7 @@ async function getAmazonProductsFromApi(searchCategory, searchString, currentPag
             },
             fail: function (response, textStatus) {
                 retData['error'] = 'Status is ' + textStatus + '\n Response is ' + response.toString();
+                window.console.log("amazon response:" + response.toString());
                 return reject(retData);
             }
         });

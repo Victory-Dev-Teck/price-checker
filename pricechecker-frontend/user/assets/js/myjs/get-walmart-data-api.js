@@ -16,6 +16,7 @@ async function getWalmartFromApi(searchCategory, searchString, currentPage, maxN
             'Content-Type' : 'application/json'
         },
         success: function (response) {
+            window.console.log("walmart response:" + response.toString());
             var myJsonString = JSON.stringify(response);
             let respBuff = JSON.parse(myJsonString);
             if(respBuff['search_results']){
