@@ -106,9 +106,13 @@ async function showTrackedProducts(){
         let trackedHtml = await convertResponse2HtmlForTracking(trackedResponse);
         let table = document.getElementById('tracked-tbody');
         table.innerHTML = trackedHtml;
+        console.log("tracked html:" + trackedHtml);
         if (preloader != null){
             preloader.innerHTML = "";
             preloader.setAttribute("class", "");
+            console.log("preloader closed.");
+        }else {
+            console.log("preloader is null");
         }
     }else {
         window.console.log('You should login to visit "Tracked Products" page!');
@@ -127,7 +131,7 @@ async function convertResponse2HtmlForTracking(response){
             let current_price = data[i]['current_price'];
             let eshop = data[i]['eshop'];
             let link = data[i]['product_url'];
-            let resBuff = [];
+            let resBuff = {};
             if(eshop === 'Amazon'){
                 resBuff = await getAmazonProductForTracking("", title, 1, 1);
             }
@@ -142,7 +146,7 @@ async function convertResponse2HtmlForTracking(response){
                 current_price = resBuff['data'][0]['price'].replace(re, "");
                 await update_tracked_price(userEmail, old_price, current_price);
             }
-
+            console.log("tracked-products:" + eshop + ":" + resBuff['data'][0]['price']);
 
             resultHtml += '<tr>\n' +
                 '                    <td><img src="' + image_url + '" width="100"/></td>\n' +

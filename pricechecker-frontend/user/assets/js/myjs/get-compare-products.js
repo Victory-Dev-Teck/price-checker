@@ -112,16 +112,16 @@ function convertResponse2HtmlForCompare(response, shopName) {
       "                                }\n" +
       "                            }]'>";
     for (i = 0; i < _length; i++) {
-        if(shopName === "Ebay")
-            console.log("comparing : " + shopName + ":" + response[i]['price']);
+        // if(shopName === "Ebay")
+        //     console.log("comparing : " + shopName + ":" + response[i]['price']);
         let title = response[i]["title"];
         let description = response[i]["description"];
         let product_url = response[i]["product_url"];
         let image_url = response[i]["image_url"];
         let re = /C /gi;
         let price = response[i]["price"].replace(re, "");
-        if(shopName === "Ebay")
-            console.log("comparing price after regx : " + shopName + ":" + price);
+        // if(shopName === "Ebay")
+        //     console.log("comparing price after regx : " + shopName + ":" + price);
       resultHtml +=
         '<div class="js-slide">\n' +
         '                                <div class="product-item">\n' +
