@@ -71,8 +71,8 @@ function convertWalmartResponseForUI(response, eshop, currentPage, numberInPage)
         for (let i = 0; i < respLen; i++) {
             let row = response[i]['product'];
             let buff = {};
-            buff['title'] = row['title'];
-            buff['description'] = row['description'];
+            buff['title'] = removeSpecialChars(row['title']);
+            buff['description'] = removeSpecialChars(row['description']);
             buff['product_url'] = row['link'];
             buff['image_url'] = row['main_image'];
             buff['price'] = "$" + response[i]['offers']['primary']['price'];

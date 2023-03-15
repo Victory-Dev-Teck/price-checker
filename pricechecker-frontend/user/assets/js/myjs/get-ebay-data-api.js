@@ -67,8 +67,8 @@ function convertEbayResponseForUI(response, eshop, currentPage, numberInPage) {
         for (let i = 0; i < respLen; i++) {
             let row = response[i];
             let buff = {};
-            buff['title'] = row['name'];
-            buff['description'] = row['description'];
+            buff['title'] = removeSpecialChars(row['name']);
+            buff['description'] = removeSpecialChars(row['description']);
             buff['product_url'] = row['link'];
             buff['image_url'] = row['thumbnail'];
             buff['price'] = row['price'];

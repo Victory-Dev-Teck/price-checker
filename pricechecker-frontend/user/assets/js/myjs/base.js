@@ -239,3 +239,9 @@ async function handleHardReload(url) {
     // This is to ensure reload with url's having '#'
     window.location.reload();
 }
+
+function removeSpecialChars(str) {
+    return str.replace(/(?!\w|\s)./g, '')
+        .replace(/\s+/g, ' ')
+        .replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2');
+}

@@ -97,8 +97,8 @@ $mockTV = array (
 );
 $mockData = array (
     array("thumbnail"=>"http://localhost/pricechecker/mock-data/laptop/Samsung Unveils Two New PCs with Signature Style and Performance - Samsung  US Newsroom.jpg",
-        "name"=>"Samsung Unveils Two New PCs with Signature Style and Performance - Samsung  US Newsroom",
-        "description"=>"Samsung Unveils Two New PCs with Signature Style and Performance - Samsung  US Newsroom",
+        "name"=>"Acer Aspire 5 A515-46-R3UB | 15.6\" Full HD IPS Display | AMD Ryzen 3 3350U Quad - Core Mobile Processor | 4GB DDR4 | 128GB N...",
+        "description"=>"Acer Aspire 5 A515-46-R3UB | 15.6\" Full HD IPS Display | AMD Ryzen 3 3350U Quad - Core Mobile Processor | 4GB DDR4 | 128GB N...",
         "price"=>"C $51.13 to C $74.01",
         "link"=>"http://localhost/pricechecker/mock-data/iphone_apple/1.png"),
     array("thumbnail"=>"http://localhost/pricechecker/mock-data/laptop/Ultra-Thin Touchscreen Laptop - Microsoft Surface.jpg",

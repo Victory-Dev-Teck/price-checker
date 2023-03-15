@@ -60,8 +60,8 @@ function convertAmazonResponseForUI(response, eshop, currentPage, numberInPage) 
         for(let i = startIndex; i < endIndex; i ++){
             let row = resp[i];
             let buff = {};
-            buff['title'] = row['title'];
-            buff['description'] = row['title'];
+            buff['title'] = removeSpecialChars(row['title']);
+            buff['description'] = removeSpecialChars(row['title']);
             buff['product_url'] = row['url'];
             buff['image_url'] = row['thumbnail'];
             buff['price'] = row['price']['current_price'] + row['price']['currency'];

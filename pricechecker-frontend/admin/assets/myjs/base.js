@@ -11,3 +11,8 @@ if(adminEmail === null || adminEmail === ''){
     // var textNode = document.createTextNode(adminEmail);
     // adminName.appendChild(textNode);
 }
+function removeSpecialChars(str) {
+    return str.replace(/(?!\w|\s)./g, '')
+        .replace(/\s+/g, ' ')
+        .replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2');
+}
