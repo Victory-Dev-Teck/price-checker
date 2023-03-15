@@ -32,13 +32,15 @@ async function getEbayProducts(maxNumberOfProducts){
 }
 function convertResponse2HtmlForLatest(response, shopName, numberOfShow){
     let resultHtml = '';
+    console.log("latest : " + shopName + ":" + response.length);
     let resLen = response.length;
     if(resLen > 0){
             let i = 0;
             resultHtml = '<div class="js-slide">\n' +
                         '   <ul class="list-unstyled products-group mb-0 overflow-visible">';
             for(i = 0; i < resLen; i++){
-                console.log("latest : " + shopName + ":" + response[i]['title']);
+                if(shopName === "Ebay")
+                    console.log("latest : " + shopName + ":" + response[i]['price']);
                 let title = response[i]['title'];
                 title = title.split(",", 1);
                 let description = response[i]['description'];
@@ -46,6 +48,8 @@ function convertResponse2HtmlForLatest(response, shopName, numberOfShow){
                 let image_url = response[i]['image_url'];
                 let re = /C /gi;
                 let price = response[i]["price"].replace(re, "");
+                if(shopName === "Ebay")
+                    console.log("latest price after regx: " + shopName + ":" + price);
                 resultHtml += '<li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">\n' +
                     '                                            <div class="product-item__outer h-100">\n' +
                     '                                                <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">\n' +
