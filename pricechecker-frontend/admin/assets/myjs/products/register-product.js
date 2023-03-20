@@ -18,7 +18,7 @@ function registerProduct(title, description, productUrl, imageUrl, price, catego
                 var resp = JSON.parse(response);
                 if((resp['status'] === 'ok')){
                     window.location.href = baseAdminPathName + '/authorized/products/products.html';
-                    window.location.reload(true);
+                    // window.location.reload(true);
                 }else {
                     window.console.log("add product error: " + resp['error']);
                     let error = resp['error']

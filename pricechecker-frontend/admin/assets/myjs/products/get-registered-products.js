@@ -57,8 +57,8 @@ function convertResponse2HtmlForRegisteredProducts(response){
                     '                                        <td>'+ category +'</td>\n' +
                     '                                        <td>'+ eshop + '</td>\n' +
                     '                                        <td>\n' +
-                    '                                            <a href="' + product_url + '" data-toggle="tooltip" title="Go to EShop" class="pd-setting-ed"><i class="fa fa-hand-grab-o" aria-hidden="true"></i></a>\n' +
-                    '                                            <a data-toggle="tooltip" title="Remove" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true" onclick="deleteProduct(\'' + id + '\')" style="padding: 5px"></i></a>\n' +
+                    '                                            <a href="' + product_url + '" data-toggle="tooltip" title="Go to EShop" class="pd-setting-ed" target="_blank"><i class="fa fa-hand-grab-o" aria-hidden="true"></i></a>\n' +
+                    '                                            <a data-toggle="tooltip" title="Remove" class="pd-setting-ed" target="_blank"><i class="fa fa-trash-o" aria-hidden="true" onclick="deleteProduct(\'' + id + '\')" style="padding: 5px" ></i></a>\n' +
                     '                                        </td>\n' +
                     '                                    </tr>';
             }

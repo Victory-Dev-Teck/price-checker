@@ -18,7 +18,7 @@ function addTrending(title, description, productUrl, imageUrl, price, category, 
                 var resp = JSON.parse(response);
                 if((resp['status'] === 'ok')){
                     window.location.href = baseAdminPathName + '/authorized/trendings/trendings.html';
-                    window.location.reload(true);
+                    // window.location.reload(true);
                 }else {
                     window.console.log("add trending product error: " + resp['error']);
                     window.alert(resp['error'])
