@@ -23,7 +23,7 @@ async function getWalmartProductsFromMock(searchCategory, searchString, currentP
 
                 retData['data'] = retArray;
                 return resolve(retData);
-            }, 5000);
+            }, 10);
 
         },
         fail: function (response, textStatus) {

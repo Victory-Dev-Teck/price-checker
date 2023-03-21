@@ -6,8 +6,8 @@ nav .navbar-brand{
     height: 160px;
 }
 .img-fluid, .compare-image{
-    width: 164px;
-    height: 156px;
+    max-width: 100%;
+    max-height: 100%;
 }
 .img-fluid, .latest-image{
     width: 70px;
@@ -51,4 +51,10 @@ tbody tr td{
 .cursor:hover{
     cursor: pointer;
     color: #000;
+}
+
+.img-center{
+    height: 170px;
+    align-items: center;
+    display: inline-flex;
 }

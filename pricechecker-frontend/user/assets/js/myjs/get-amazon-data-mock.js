@@ -23,7 +23,7 @@ async function getAmazonProductsFromMock(searchCategory, searchString, currentPa
 
                     retData['data'] = retArray;
                     return resolve(retData);
-                }, 5000);
+                }, 10);
 
             },
             fail: function (response, textStatus) {

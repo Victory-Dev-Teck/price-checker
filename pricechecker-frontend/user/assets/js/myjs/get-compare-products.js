@@ -125,7 +125,7 @@ function convertResponse2HtmlForCompare(response, shopName) {
       resultHtml +=
         '<div class="js-slide">\n' +
         '                                <div class="product-item">\n' +
-        '                                    <div class="product-item__outer h-100">\n' +
+        '                                    <div class="product-item__outer h-100 w-100">\n' +
         '                                        <div class="product-item__inner px-wd-4 p-2 p-md-3">\n' +
         '                                            <div class="product-item__body pb-xl-2">\n' +
         '                                                <h5 class="mb-1 product-item__title"><a href="' +
@@ -136,9 +136,9 @@ function convertResponse2HtmlForCompare(response, shopName) {
         '                                                <div class="mb-2">\n' +
         '                                                    <a href="' +
         product_url +
-        '" class="d-block text-center" target="_blank"><img class="compare-image" src="' +
+        '" class="d-block text-center" target="_blank"><div class="img-center"><img class="compare-image" src="' +
         image_url +
-        '" alt="Image Description"></a>\n' +
+        '" alt="Image Description"></div></a>\n' +
         "                                                </div>\n" +
         '                                                <div class="flex-center-between mb-1">\n' +
         '                                                    <div class="prodcut-price">\n' +
