@@ -2,7 +2,7 @@
  * This is javascript file for common settings
  */
 var baseAdminPathName = "/pricechecker-frontend/admin";
-var baseClientPathName = "/pricechecker-frontend"
+var baseClientPathName = "/pricechecker-frontend";
 var baseServerPathNameForAdmin = "http://localhost/pricechecker/admin";
 var numOfShowProducts = 10;
 var currentPageOfAmazon = 0;
