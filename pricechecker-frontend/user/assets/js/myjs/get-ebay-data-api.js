@@ -15,7 +15,7 @@ async function getEbayProductsFromAPI(searchCategory, searchString, currentPage,
         "url": url,
         "method": "GET",
         "headers": {
-            "X-RapidAPI-Key": "264d6a643bmshe4d1dae958ff50fp1b9242jsnf46f9c07e405",
+            "X-RapidAPI-Key": "d481c8a88fmsh66a39700101964fp15b1f5jsnb524d8ed956c",
             "X-RapidAPI-Host": "ebay-data-scraper.p.rapidapi.com"
         },
         success: function (response) {
