@@ -13,7 +13,7 @@ function getEbayProductsFromAPI(searchCategory, searchString, currentPage, maxNu
         "url": url,
         "method": "GET",
         "headers": {
-            "X-RapidAPI-Key": "ece529553cmsh53c9439b9c1de88p185a42jsn91dae1eb5d7a",
+            "X-RapidAPI-Key": "d481c8a88fmsh66a39700101964fp15b1f5jsnb524d8ed956c",
             "X-RapidAPI-Host": "ebay-data-scraper.p.rapidapi.com"
         },
         success: function (response) {
