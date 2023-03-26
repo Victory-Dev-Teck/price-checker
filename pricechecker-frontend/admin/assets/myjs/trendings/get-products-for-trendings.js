@@ -19,9 +19,9 @@ async function getAmazonProducts(maxNumberOfProducts, currentPage){
     let resultHtml = '';
     let response = {};
     if(isMockData){
-        response =  await getEbayProductsFromMock("", "", currentPage,  maxNumberOfProducts);
+        response =  await getAmazonProductsFromMock("", "", currentPage,  maxNumberOfProducts);
     }else {
-        response = await getEbayProductsFromAPI("", "",  currentPage, maxNumberOfProducts);
+        response = await getAmazonProductsFromApi("", "",  currentPage, maxNumberOfProducts);
     }
     if(response['error'] === 'ok'){
         resultHtml = convertResponse2HtmlForAddProduct(response['data'], "Amazon");
@@ -52,7 +52,7 @@ async function getWalmProducts(maxNumberOfProducts, currentPage){
     if(isMockData){
         response = await getWalmartProductsFromMock("", "", currentPage,  maxNumberOfProducts);
     }else {
-        response = await getWalmProducts("", "",  currentPage, maxNumberOfProducts);
+        response = await getWalmartFromApi("", "",  currentPage, maxNumberOfProducts);
     }
     if(response['error'] === 'ok'){
         resultHtml = convertResponse2HtmlForAddProduct(response['data'], "Walmart");
